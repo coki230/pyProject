@@ -49,10 +49,10 @@ print(data)
 np.random.shuffle(data.values)
 print(data)
 
-# for i in range(50):
-#     optimizer.zero_grad()
-#     y_pred = model.forward(torch.FloatTensor(data.iloc[:, 0:4].values))
-#     l = loss(y_pred, torch.LongTensor(data.iloc[:, 4].values))
-#     l.backward()
-#     optimizer.step()
-#     print(f'index is {i}, loss is {l}')
+for i in range(50):
+    optimizer.zero_grad()
+    y_pred = model.forward(torch.FloatTensor(data.iloc[:, 0:4].values))
+    l = loss(y_pred, torch.LongTensor(data.iloc[:, 4].values))
+    l.backward()
+    optimizer.step()
+    print(f'index is {i}, loss is {l}')

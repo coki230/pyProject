@@ -1,7 +1,4 @@
 import numpy as np
+import torch
 
-arr = np.arange(12)
-
-barr = np.random.shuffle(arr)
-print(barr)
-print(arr)
+print(torch.backends.mps.is_available())
