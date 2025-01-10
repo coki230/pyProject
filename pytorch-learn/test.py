@@ -1,4 +1,5 @@
-import numpy as np
-import torch
+import random
 
-print(torch.backends.mps.is_available())
+print(random.randint(0, 10000))
+
+path = "train/kakaxi/" + str(random.randint(0, 10000)) + ".jpg"

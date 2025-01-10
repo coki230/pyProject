@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="upload-container">
+        <div class="file-drop-area"
+             ondragover="event.preventDefault(); this.classList.add('highlight');"
+             ondragleave="event.preventDefault(); this.classList.remove('highlight');"
+             ondrop="handleDrop(event, this);">
+            <span class="fake-btn" onclick="document.querySelector('.file-input').click();">Choose images</span>
+            <span class="file-msg">or drag and drop images here</span>
+            <input class="file-input" type="file" name="image"
+                   accept="image/*" multiple onchange="handleFileChange(event)">
+        </div>
+        <button class="submit-btn" onclick="submitFiles()">Submit</button>
+        <div class="result"></div>
+    </div>
+    <img id="preview" alt="Image Preview" style="max-width: 300px; display: none;">
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
